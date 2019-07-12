@@ -1,0 +1,16 @@
+{
+  "pages": [
+    {
+      "path": "pages/index",
+      "style": {
+        "navigationBarTitleText": "slider-range demo"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "slider-range",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#fff"
+  }
+}
