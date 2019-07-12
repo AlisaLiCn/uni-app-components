@@ -10,6 +10,7 @@
       background-color="#EEEEF6"
       active-color="#FF6B00"
       :format="format"
+      :decorationVisible="true"
       @change="handleRangeChange"
     ></slider-range>
   </view>

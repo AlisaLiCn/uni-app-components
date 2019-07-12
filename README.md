@@ -1,8 +1,27 @@
 # slider-range
-uni-app 滑块区间选择组件
+uni-app 滑块区间选择组件  
+参考自[ Slider - Mand Mobile](https://github.com/didi/mand-mobile/tree/master/components/slider)
+
+在其基础上，添加了左右滑块不能重合的限制
 
 ## 属性说明
 
 |属性名|类型|默认值|说明|
 | -- | -- | --|--|
-| value | Array<Number,Number> | [0,100] ||
+| value | Array<Number, Number> | [0,100] |滑块已选中区间的值|
+| min | Number|  0 | 滑块区间最小值 |
+| max | Number | 100 | 滑块区间最大值 | 
+| step | Number | 1 | 拖动时的步长 |
+| disabled | Boolean | false | 是否为禁用状态 |
+| height | Number | 50 | 滑块容器高度 |
+| barHeight | Number | 5 | 滑块进度条高度 |
+| backgroundColor | String | #e9e9e9| 滑块进度条背景色|
+| activeColor | String | #1aad19 | 已选中区间进度条颜色|
+| blockSize | Number | 20 | 滑块大小 |
+| blockColor | String | #fff | 滑块颜色 |
+| decorationVisible | Boolean | false | 是否显示滑块内装饰元素|
+| tipVisible | Boolean | true | 是否显示滑块值提示文本 |
+| fomat| Function | | 滑块值提示文本格式化函数 |
+
+
+## 使用示例

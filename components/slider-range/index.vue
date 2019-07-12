@@ -33,7 +33,7 @@
       <!-- 滑动块-左 -->
       <view
         class="slider-handle-block"
-        :class="{ decoration: showBlockDecoration }"
+        :class="{ decoration: decorationVisible }"
         :style="{
           backgroundColor: blockColor,
           width: blockSize + 'px',
@@ -49,7 +49,7 @@
       <!-- 滑动块-右 -->
       <view
         class="slider-handle-block"
-        :class="{ decoration: showBlockDecoration }"
+        :class="{ decoration: decorationVisible }"
         :style="{
           backgroundColor: blockColor,
           width: blockSize + 'px',
@@ -63,8 +63,8 @@
       ></view>
 
       <!-- 滑块值提示 -->
-      <view v-if="showTip" class="range-tip" :style="lowerTipStyle">{{ format(values[0]) }}</view>
-      <view v-if="showTip" class="range-tip" :style="higherTipStyle">{{ format(values[1]) }}</view>
+      <view v-if="tipVisible" class="range-tip" :style="lowerTipStyle">{{ format(values[0]) }}</view>
+      <view v-if="tipVisible" class="range-tip" :style="higherTipStyle">{{ format(values[1]) }}</view>
     </view>
   </view>
 </template>
@@ -134,11 +134,11 @@ export default {
       type: String,
       default: '#fff'
     },
-    showTip: {
+    tipVisible: {
       type: Boolean,
       default: true
     },
-    showBlockDecoration: {
+    decorationVisible: {
       type: Boolean,
       default: false
     }
@@ -338,7 +338,7 @@ export default {
   z-index: 12;
 }
 
-.slider-handle-block .decoration::before {
+.slider-handle-block.decoration::before {
   position: absolute;
   content: '';
   width: 6upx;
@@ -351,7 +351,7 @@ export default {
   z-index: 13;
 }
 
-.slider-handle-block .decoration::after {
+.slider-handle-block.decoration::after {
   position: absolute;
   content: '';
   width: 6upx;
