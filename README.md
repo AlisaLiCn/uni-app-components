@@ -1,8 +1,11 @@
 # slider-range
 uni-app 滑块区间选择组件  
+
 参考自[ Slider - Mand Mobile](https://github.com/didi/mand-mobile/tree/master/components/slider)
 
-在其基础上，添加了左右滑块不能重合的限制
+在其基础上，添加了左右滑块不能重合的限制和其他自定义项。
+
+可根据具体需求，修改、自定义其他内容。
 
 ## 属性说明
 
@@ -25,3 +28,44 @@ uni-app 滑块区间选择组件
 
 
 ## 使用示例
+
+```
+
+    <slider-range
+      :value="rangeValue"
+      :min="rangeMin"
+      :max="rangMax"
+      :step="5"
+      :bar-height="3"
+      :block-size="26"
+      background-color="#EEEEF6"
+      active-color="#FF6B00"
+      :format="format"
+      :decorationVisible="true"
+      @change="handleRangeChange"
+    ></slider-range>
+
+
+	import SliderRange from '../components/slider-range/index.vue'
+	export default {
+	  components: {
+	    SliderRange
+	  },
+	  data() {
+	    return {
+	      rangeMin: 5,
+	      rangMax: 200,
+	      rangeValue: [10, 50]
+	    }
+	  },
+	  methods: {
+	    format(val) {
+	      return val + '万'
+	    },
+	    handleRangeChange(e) {
+	      this.rangeValue = e
+	    }
+	  }
+	}
+
+```
