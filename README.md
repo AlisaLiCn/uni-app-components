@@ -34,45 +34,48 @@ uni-app 滑块区间选择组件
 
 ## 使用示例
 
+```html
+
+<slider-range
+  :value="rangeValue"
+  :min="rangeMin"
+  :max="rangMax"
+  :step="5"
+  :bar-height="3"
+  :block-size="26"
+  background-color="#EEEEF6"
+  active-color="#FF6B00"
+  :format="format"
+  :decorationVisible="true"
+  @change="handleRangeChange"
+></slider-range>
+
+
 ```
 
-    <slider-range
-      :value="rangeValue"
-      :min="rangeMin"
-      :max="rangMax"
-      :step="5"
-      :bar-height="3"
-      :block-size="26"
-      background-color="#EEEEF6"
-      active-color="#FF6B00"
-      :format="format"
-      :decorationVisible="true"
-      @change="handleRangeChange"
-    ></slider-range>
+```javascript
 
-
-	import SliderRange from '../components/slider-range/index.vue'
-	export default {
-	  components: {
-	    SliderRange
-	  },
-	  data() {
-	    return {
-	      rangeMin: 5,
-	      rangMax: 200,
-	      rangeValue: [10, 50]
-	    }
-	  },
-	  methods: {
-	    format(val) {
-	      return val + '万'
-	    },
-	    handleRangeChange(e) {
-	      this.rangeValue = e
-	    }
-	  }
+import SliderRange from '../components/slider-range/index.vue'
+export default {
+  components: {
+	SliderRange
+  },
+  data() {
+	return {
+	  rangeMin: 5,
+	  rangMax: 200,
+	  rangeValue: [10, 50]
 	}
-
+  },
+  methods: {
+	format(val) {
+	  return val + '万'
+	},
+	handleRangeChange(e) {
+	  this.rangeValue = e
+	}
+  }
+}
 ```
 
 效果图
