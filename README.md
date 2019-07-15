@@ -11,6 +11,7 @@ uni-app 滑块区间选择组件
 
 ![](http://puogyrhx6.bkt.clouddn.com/img_20190715184802.png)
 
+
 ## 属性说明
 
 |属性名|类型|默认值|说明|
@@ -73,3 +74,7 @@ uni-app 滑块区间选择组件
 	}
 
 ```
+
+效果图
+
+![](http://puogyrhx6.bkt.clouddn.com/img_20190715175325.png)
