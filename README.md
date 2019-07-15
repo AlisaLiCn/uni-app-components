@@ -69,7 +69,7 @@ export default {
   },
   methods: {
 	format(val) {
-	  return val + '万'
+	  return val + '%'
 	},
 	handleRangeChange(e) {
 	  this.rangeValue = e
