@@ -29,9 +29,9 @@ export default {
       rangeValue: [10, 50]
     }
   },
-  methods: {
-    format(val) {
-      return val + 'Íò'
+  methods:{
+    format(val){
+      return  `${val}ä¸‡`
     },
     handleRangeChange(e) {
       this.rangeValue = e
@@ -39,9 +39,8 @@ export default {
   }
 }
 </script>
-
 <style>
-  .demo-page{
-    padding: 200upx 40upx 0;
-  }
+.demo-page {
+  padding: 200upx 40upx 0;
+}
 </style>
