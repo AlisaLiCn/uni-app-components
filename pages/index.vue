@@ -1,18 +1,32 @@
 <template>
   <view class="demo-page">
-    <slider-range
-      :value="rangeValue"
-      :min="rangeMin"
-      :max="rangMax"
-      :step="5"
-      :bar-height="3"
-      :block-size="26"
-      background-color="#EEEEF6"
-      active-color="#FF6B00"
-      :format="format"
-      :decorationVisible="true"
-      @change="handleRangeChange"
-    ></slider-range>
+    <view class="slider-item">
+      <slider-range
+        :value="rangeValue"
+        :min="rangeMin"
+        :max="rangMax"
+        :step="5"
+        :bar-height="3"
+        :block-size="26"
+        background-color="#EEEEF6"
+        @change="handleRangeChange"
+      ></slider-range>
+    </view>
+    <view class="slider-item">
+      <slider-range
+        :value="rangeValue"
+        :min="rangeMin"
+        :max="rangMax"
+        :step="5"
+        :bar-height="3"
+        :block-size="26"
+        background-color="#EEEEF6"
+        active-color="#FF6B00"
+        :format="format"
+        :decorationVisible="true"
+        @change="handleRangeChange"
+      ></slider-range>
+    </view>
   </view>
 </template>
 
@@ -24,14 +38,14 @@ export default {
   },
   data() {
     return {
-      rangeMin: 5,
+      rangeMin: 0,
       rangMax: 200,
-      rangeValue: [10, 50]
+      rangeValue: [20, 60]
     }
   },
-  methods:{
-    format(val){
-      return  `${val}万`
+  methods: {
+    format(val) {
+      return `${val}%`
     },
     handleRangeChange(e) {
       this.rangeValue = e
@@ -40,7 +54,13 @@ export default {
 }
 </script>
 <style>
+  
 .demo-page {
+  background-color: #fff;
   padding: 200upx 40upx 0;
+}
+
+.slider-item {
+  margin-bottom: 60upx;
 }
 </style>

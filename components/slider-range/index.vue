@@ -95,10 +95,8 @@ export default {
     },
     format: {
       type: Function,
-      default: function() {
-        return function(val) {
-          return val
-        }
+      default: function(val) {
+        return val
       }
     },
     disabled: {
