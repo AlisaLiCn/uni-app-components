@@ -9,7 +9,7 @@ uni-app 滑块区间选择组件
 
 扫码预览
 
-![](http://puogyrhx6.bkt.clouddn.com/img_20190715184802.png)
+![](http://images.alisali.cn/img_20190715184802.png)
 
 
 ## 属性说明
@@ -80,4 +80,4 @@ export default {
 
 效果图
 
-![](http://puogyrhx6.bkt.clouddn.com/img_20190715175325.png)
+![](http://images.alisali.cn/img_20190715175325.png)
