@@ -8,14 +8,14 @@
       <view
         class="slider-bar"
         :style="{
-          height: barHeight + 'px'
+          height: barHeight + 'px',
         }"
       >
         <!-- 背景条 -->
         <view
           class="slider-bar-bg"
           :style="{
-            backgroundColor: backgroundColor
+            backgroundColor: backgroundColor,
           }"
         ></view>
 
@@ -25,7 +25,7 @@
           :style="{
             width: ((values[1] - values[0]) / (max - min)) * 100 + '%',
             left: lowerHandlePosition + '%',
-            backgroundColor: activeColor
+            backgroundColor: activeColor,
           }"
         ></view>
       </view>
@@ -38,7 +38,7 @@
           backgroundColor: blockColor,
           width: blockSize + 'px',
           height: blockSize + 'px',
-          left: lowerHandlePosition + '%'
+          left: lowerHandlePosition + '%',
         }"
         @touchstart="_onTouchStart"
         @touchmove="_onBlockTouchMove"
@@ -54,7 +54,7 @@
           backgroundColor: blockColor,
           width: blockSize + 'px',
           height: blockSize + 'px',
-          left: higherHandlePosition + '%'
+          left: higherHandlePosition + '%',
         }"
         @touchstart="_onTouchStart"
         @touchmove="_onBlockTouchMove"
@@ -77,75 +77,75 @@ export default {
       type: Array,
       default: function() {
         return [0, 100]
-      }
+      },
     },
     //最小值
     min: {
       type: Number,
-      default: 0
+      default: 0,
     },
     //最大值
     max: {
       type: Number,
-      default: 100
+      default: 100,
     },
     step: {
       type: Number,
-      default: 1
+      default: 1,
     },
     format: {
       type: Function,
       default: function(val) {
         return val
-      }
+      },
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     //滑块容器高度
     height: {
       height: Number,
-      default: 50
+      default: 50,
     },
     //区间进度条高度
     barHeight: {
       type: Number,
-      default: 5
+      default: 5,
     },
     //背景条颜色
     backgroundColor: {
       type: String,
-      default: '#e9e9e9'
+      default: '#e9e9e9',
     },
     //已选择的颜色
     activeColor: {
       type: String,
-      default: '#1aad19'
+      default: '#1aad19',
     },
     //滑块大小
     blockSize: {
       type: Number,
-      default: 20
+      default: 20,
     },
     blockColor: {
       type: String,
-      default: '#fff'
+      default: '#fff',
     },
     tipVisible: {
       type: Boolean,
-      default: true
+      default: true,
     },
     decorationVisible: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
       values: [this.min, this.max],
       startDragPos: 0, // 开始拖动时的坐标位置
-      startVal: 0 //开始拖动时较小点的值
+      startVal: 0, //开始拖动时较小点的值
     }
   },
   computed: {
@@ -168,7 +168,7 @@ export default {
         return `left: ${this.higherHandlePosition}%;`
       }
       return `right: ${100 - this.higherHandlePosition}%;transform: translate(50%, -100%);`
-    }
+    },
   },
   created: function() {},
   onLoad: function(option) {},
@@ -180,11 +180,16 @@ export default {
         if (this._isValuesValid(newVal) && (newVal[0] !== this.values[0] || newVal[1] !== this.values[1])) {
           this._updateValue(newVal)
         }
-      }
-    }
+      },
+    },
   },
   methods: {
     _updateValue(newVal) {
+      // 步长大于区间差，或者区间最大值和最小值相等情况
+      if (this.step >= this.max - this.min) {
+        throw new RangeError('Invalid slider step or slider range')
+      }
+
       let newValues = []
       if (Array.isArray(newVal)) {
         newValues = [newVal[0], newVal[1]]
@@ -280,8 +285,8 @@ export default {
     },
     _isValuesValid: function(values) {
       return Array.isArray(values) && values.length == 2
-    }
-  }
+    },
+  },
 }
 </script>
 
