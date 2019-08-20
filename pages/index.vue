@@ -9,6 +9,7 @@
         :bar-height="3"
         :block-size="26"
         background-color="#EEEEF6"
+        :format="formatValue"
         @change="handleRangeChange"
       ></slider-range>
     </view>
@@ -22,7 +23,7 @@
         :block-size="26"
         background-color="#EEEEF6"
         active-color="#FF6B00"
-        :format="format"
+        :format="formatValue2"
         :decorationVisible="true"
         @change="handleRangeChange"
       ></slider-range>
@@ -45,7 +46,10 @@ export default {
     }
   },
   methods: {
-    format(val) {
+    formatValue(val) {
+      return val
+    },
+    formatValue2(val) {
       return `${val}%`
     },
     handleRangeChange(e) {
