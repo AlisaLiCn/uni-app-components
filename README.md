@@ -29,7 +29,7 @@ uni-app 滑块区间选择组件
 | blockColor | String | #fff | 滑块颜色 |
 | decorationVisible | Boolean | false | 是否显示滑块内装饰元素|
 | tipVisible | Boolean | true | 是否显示滑块值提示文本 |
-| fomat| Function | | 滑块值提示文本格式化函数 |
+| fomat| Function | | 滑块值提示文本格式化函数，**注意**：小程序中此属性必传，否则会报错，如果无需格式化，可以简单返回原始值： `format(val) {  return val    }`；H5中可以不传。|
 
 
 ## 使用示例
@@ -81,3 +81,14 @@ export default {
 效果图
 
 ![](http://images.alisali.cn/img_20190715175325.png)
+
+
+
+
+## 更新记录
+v1.0.1 (2019.08.20)
+- 增加了滑块区间无效时的判断
+- 更新使用示例及注意事项
+
+v1.0.0 (2019.07.15)
+- 初始版本

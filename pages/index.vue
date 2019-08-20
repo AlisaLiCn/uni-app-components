@@ -5,10 +5,11 @@
         :value="rangeValue"
         :min="rangeMin"
         :max="rangMax"
-        :step="5"
+        :step="step"
         :bar-height="3"
         :block-size="26"
         background-color="#EEEEF6"
+        :format="formatValue"
         @change="handleRangeChange"
       ></slider-range>
     </view>
@@ -17,12 +18,12 @@
         :value="rangeValue"
         :min="rangeMin"
         :max="rangMax"
-        :step="5"
+        :step="step"
         :bar-height="3"
         :block-size="26"
         background-color="#EEEEF6"
         active-color="#FF6B00"
-        :format="format"
+        :format="formatValue2"
         :decorationVisible="true"
         @change="handleRangeChange"
       ></slider-range>
@@ -34,27 +35,30 @@
 import SliderRange from '../components/slider-range/index.vue'
 export default {
   components: {
-    SliderRange
+    SliderRange,
   },
   data() {
     return {
-      rangeMin: 0,
+      rangeMin: 50,
       rangMax: 200,
-      rangeValue: [20, 60]
+      rangeValue: [60, 150],
+      step: 10,
     }
   },
   methods: {
-    format(val) {
+    formatValue(val) {
+      return val
+    },
+    formatValue2(val) {
       return `${val}%`
     },
     handleRangeChange(e) {
       this.rangeValue = e
-    }
-  }
+    },
+  },
 }
 </script>
 <style>
-  
 .demo-page {
   background-color: #fff;
   padding: 200upx 40upx 0;
