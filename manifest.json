@@ -65,6 +65,7 @@
         "router" : {
             "mode" : "history"
         },
-        "domain" : "demo.alisali.cn"
+        "domain" : "demo.alisali.cn",
+        "title" : "components for uni-app"
     }
 }
