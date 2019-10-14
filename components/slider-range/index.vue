@@ -293,6 +293,7 @@ export default {
 <style scoped>
 .slider-range {
   position: relative;
+  padding-top: 40rpx;
 }
 
 .slider-range-inner {
