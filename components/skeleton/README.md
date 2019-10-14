@@ -1,5 +1,5 @@
 # skeleton
-uni-app 骨架屏组件
+uni-app 骨架屏组件，用于数据加载时显示占位元素
 
 ## 属性说明
 
@@ -19,20 +19,41 @@ uni-app 骨架屏组件
 ```html
 <skeleton
   :loading="loading"
-  :avatarSize="header.avatarSize"
-  :row="header.row"
-  :showTitle="header.showTitle"
-></skeleton>
-
+  :avatarSize="skeleton1.avatarSize"
+  :row="skeleton1.row"
+  :showTitle="skeleton1.showTitle"
+>
+  <view class="section-content">我是段落1</view>
+</skeleton>
 ```
 
 ```javascript
-
 import Skeleton from '../components/skeleton/index.vue'
 export default {
   components: {
     Skeleton
-  }
+  },
+  data() {
+    return {
+      loading: true,
+      skeleton1 : {
+        avatarSize: '52px',
+        row: 3,
+        showTitle: true,
+      }
+    }
+  },
+  created() {
+    this.reloadData()
+  },
+  methods: {
+    reloadData() {
+      this.loading = true
+      setTimeout(() => {
+        this.loading = false
+      }, 3000)
+    },
+  },
 }
 ```
 
