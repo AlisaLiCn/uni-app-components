@@ -7,8 +7,8 @@ uni-app 骨架屏组件，用于数据加载时显示占位元素
 | -- | -- | --|--|
 | loading | Boolean | true | 是否显示占位图 |
 | showAvatar | Boolean | true | 是否显示头像占位图 |
-| AvatarSize | String | 50px | 头像占位图大小 |
-| AvatarShape | String | round | 头像形状，可选值：round, square |
+| avatarSize | String | 50px | 头像占位图大小 |
+| avatarShape | String | round | 头像形状，可选值：round, square |
 | showTitle | Boolean | true | 是否显示标题占位图 |
 | titleWidth | String | 40% | 标题占位图宽度 |
 | row | Number|  3 | 段落占位图行数 |
